@@ -1,0 +1,86 @@
+CHAPTER 4
+
+1. [] is syntax for a list.
+
+2. spam[2]="hello"
+
+3. 'd'
+
+4. 'd'
+
+5. ['a','b']
+
+6. 1
+
+7. [3.14, 'cat', 11, 'cat', True, 99]
+
+8. [3.14, 11, 'cat', True, 99]
+
+9. + and * respectively
+
+10. append adds elements in the end of the list, whereas in insert function we have to input the index value where the element is to 
+    be inserted.
+
+11. pop() and remove()
+
+12. They both have indices and len() function is present.
+
+13. lists are mutable. Their values can be changed, whereas tuples are immutable.
+
+14. (42,)
+
+15. tuple() and list() respectively
+
+16. it contains a reference to the list in memory
+
+17. If a list copied using copy() is being modified, the original list changes as well. they have the same reference. 
+    However, if a list copied using deepcopy() is being modified, the original list remains the same. 
+
+Comma Code
+
+def edit(list):
+    
+    for i in range(len(list)):
+        if i>0:
+            if i<(len(list)-1):
+                print(", ",end='')
+            else:
+                print(" and",end=' ')
+            
+            print(list[i],end='')
+
+Coin Flip Streaks
+
+import random
+streak_count=0
+for experimentNumber in range(10000):
+    # Code that creates a list of 100 'heads' or 'tails' values.
+    l=[]
+    for i in range(100):
+        set='HT'
+        index=random.randint(0,1)
+        l.append(set[index])
+
+    # Code that checks if there is a streak of 6 heads or tails in a row.
+    count=0
+    temp=l[0]
+    
+    for i in l:
+        if i==temp:
+            count+=1
+            temp=i
+            if count==6:
+                streak_count+=1
+
+        else:
+            count=0
+            temp=i
+        
+print('Chance of streak: %s%%' % (streak_count / 100))
+
+Character Picture Grid
+
+for i in range(6):
+    for j in range(9):
+        print(grid[j][i],end='')
+    print()

@@ -1,0 +1,64 @@
+CHAPTER 11
+
+1. assert spam<10, "Integer is less than 10"
+
+2. assert eggs.lower()=bacon.lower(), "the strings are the same"
+
+3. assert True, "assertion error"
+
+4. import logging
+   logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')
+
+5. import logging
+   logging.basicConfig(filename='ProgramLog.txt', level=logging.DEBUG,format=' %(asctime)s - %(levelname)s
+   - %(message)s')
+
+6. DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+7. logging.disable(level=CRITICAL)
+ 
+8. the log messages list any variables that you have specified at that point in time. A missing log 
+   message will indicate that a part of code is skipped, and this way, correct the code.
+  
+
+9. Step Over- goes over the next line of code, and if a function call is present, it goes through the
+              function at full speed, till the line of code where it returns an element. 
+   
+   Step In- goes over the next line of code, and if a function call is present, it jumps to the first
+            line of that function, and the debugger starts debugging.
+
+   Step Out- If the debugger is debugging lines of code inside a function using Step In and stopped, 
+	     then we use Step Out to debug the rest of the code inside and outside the function.
+
+10. until it terminates or reaches a breakpoint (an intentional stopping point placed for reviewing 
+    debugging process)
+
+11. An intentional stopping point placed for reviewing debugging process
+
+12. By clicking on the line number of the code you want to put your breakpoint on. This causes a red 
+    dot to appear on the line number, marking that the breakpoint is present.
+
+
+Debugging Coin Toss
+
+import random
+guess = ''
+set=['tails','heads']
+while guess not in ('heads', 'tails'):
+    print('Guess the coin toss! Enter heads or tails:')
+    guess = input()
+toss = random.randint(0, 1) 
+if set[toss] == guess:
+    print('You got it!')
+else:
+    print('Nope! Guess again!')
+    guesss = input()
+    if set[toss] == guesss:
+        print('You got it!')
+    else:
+        print('Nope. You are really bad at this game.')
+
+
+
+   
+   

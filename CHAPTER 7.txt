@@ -1,0 +1,117 @@
+CHAPTER 7
+
+1. compile() function
+
+2. Because we need \ for "\d" and not escape the 'd' character
+
+3. search() returns the index of the first element that matches.
+
+4. Using group() function
+
+5. group(0) would return everything which matches the pattern.
+   group(1) would return the first set of elements in the parenthesis which matches the pattern.
+   group(2) would return the second set of elements in the parenthesis which matches the pattern.
+
+6. By escaping them using backslash
+
+7. using the index of the list created by findall()
+
+8. To match any one of many expressions.
+
+9. In the optional case and when we want to return the string with least length, we use ?.
+
+10. while using * it doesn't matter if the matching expression is absent. whereas if no matching
+    expression is found while using +, then the value of the match will be None.
+
+11. {3} matches exactly 3 times the pattern. whereas {3,5} matches anywhere in between 3 to 5 
+    times the pattern.
+
+12. \d allows you to match digits from 0 to 9. \w allows you to match digits and alphabets.
+    \s allows you to match spaces, newlines and tab spaces.
+
+13. \D doesn't allow you to match digits from 0 to 9. \W doesn't allow you to match digits and
+    alphabets. \S doesn't allow you to match spaces, newlines and tab spaces.
+
+14. .* checks for the longest match possible, whereas .*? checks for the shortest match 
+    possible.
+
+15. [a-z0-9]
+
+16. re.I as second argument of compile()
+
+17. . character matches everything except newline characters. If re.DOTALL is passed as 
+    second argument, then it matches everything, including newline characters.
+
+18. X drummers, 11 pipers, five rings, X hens
+
+19. It allows you to present hard-to-read expressions in a tabular form by ignoring the 
+    whitespaces and comments in it.
+
+20. re.compile(r'''(
+    (^\d+)
+    (, \d{3}*$))'''
+
+21. re.compile(r'(\w* Watanabe)')
+
+22. re.compile(r'^(Alice | Bob | Carol) (eats | pets | throws) (apples | cats | baseballs)
+    \.$',re.I)
+
+
+Date Detection
+
+re.compile((^(0[1-9] | [1-2][0-9] | 3[0-1]) / (0[1-9] | 1[1-2]) / (([1-2]\d\d\d)$))
+
+
+Strong Password Detection
+
+def password(input_string):
+	a=re.compiler(r'\d')
+	b=re.compiler(r'\w+')
+	
+	mo1=a.search(input_string)
+	mo2=b.search(input_string)
+	if mo1 and mo2:
+		return True
+	else:
+		return False
+
+
+Regex Version of the strip() Method
+
+def regexstrip(inp,element):
+	regex=re.compiler(r'(^\s.*\s$)')
+	regex1=re.compile(r'(^{element}{element}$)')
+	regex1.sub('',inp)
+	if regex.search(inp):
+		print(regex.sub('',inp))
+	elif regex1.search(inp):
+		print(regex1.sub('',inp)
+
+		
+		
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+CHAPTER 1
+
+Practice Questions
+
+1. The operators are *, -, / and +
+   The values are -88.8 and 5
+
+2. spam in the single quotes is a string and 
+   spam without the single quotes is a variable
+
+3. String, integer, boolean
+
+4. An expression consists of values and operators. They evaluate and reduce into a single value
+
+5. A statement initializes a variable, and assigns a value to it, which is stored. An expression does not store any data, and forgets the output just after returning it.
+
+6. A value of 21.
+
+7. 'spamspamspam'
+
+8. It is because variables are named using only strings. 100 is an integer which can't be used as a variable name.
+
+9. int(value), float(value) and str(value) respectively
+
+10. A string type and an int type cannot be concatenated. To fix this, put 99 in quotes to make it a string.

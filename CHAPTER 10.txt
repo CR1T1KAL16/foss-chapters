@@ -1,0 +1,52 @@
+CHAPTER 10
+
+1. shutil.copy() copies only a single file. shutil.copytree copies the whole folder along with
+   its subfolders and files.
+
+2. shutil.move(file to be renamed, new file name)
+
+3. in order to temporarily delete the file (move to recycle bin), we use send2trash.
+   shutil modules permanently deletes the files.
+
+4. zipfile.ZipFile() method is equivalent to file objects' open() method.
+
+
+Selective Copy
+
+import os
+import shutil
+from pathlib import Path
+
+folder=input("enter folder name: ")
+ext=input("enter file extension to search: ")
+for folderName, subfolders, filenames in os.walk('C:\\{folder}'):
+    
+    for filename in filenames:
+        if ext in filename:
+            x=Path('C:\\selective_copy',filename)
+            y=Path(folderName,filename)
+            shutil.move(y,x)
+
+
+Deleting Unneeded Files
+
+import os
+import shutil
+from pathlib import Path
+
+folder=input("enter folder name: ")
+ext=input("enter file extension to search: ")
+for foldername, subfolders, filenames in os.walk('C:\\{folder}'):
+    
+    for filename in filenames:
+        if ext in filename:
+            y=Path(foldername,filename)
+            size=os.path.getsize(y)
+            if size>100*1024*1024:
+		print(y)
+                os.unlink(y)
+
+		
+
+
+

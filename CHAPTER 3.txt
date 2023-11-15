@@ -1,0 +1,52 @@
+CHAPTER 3
+
+1. => They can be used multiple times in the same code.
+   => The code gets tidier.
+
+2. The code in the function is executed only when the function is called outside.
+
+3. def statement creates a function.
+
+4. Function is a block of code which only runs when it is called.
+   A function call is used to call the function for it to work.
+
+5. There's only one global scope in a python program. There can be n number of local scopes (number of functions)
+
+6. The variables are destroyed after the execution of the function.
+
+7. return value can be any element you want from a function, to use elsewhere in the code. It can also be used in an expression.
+
+8. The return value will be None
+
+9. Using global function, you can convert a local variable to a global variable.
+
+10. Nonetype
+
+11. It lets you to use the user-defined functions in that particular module.
+
+12. spam.bacon()
+
+13. Using try-except statements.
+
+14. Inside the try clause will be the code, and the error type inside the except clause.
+
+The Collatz Sequence
+
+import sys
+def collatz(number):
+    if number==1:
+        sys.exit()
+    if number%2==0:
+        print(number//2)
+        collatz(number//2)   
+    else:
+        print(3 * number + 1)
+        collatz(3*number+1)
+    
+try:
+    collatz(int(input()))
+except ValueError:
+    print("please enter an integer")
+        
+
+

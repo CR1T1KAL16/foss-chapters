@@ -1,0 +1,104 @@
+CHAPTER 8
+
+1. No
+
+2. Because it's easier to call. as it is frequently used, to always type pyinputplus will be
+   difficult.
+
+3. inputInt() inputs integers without decimal values. inputFloat() inputs integers with decimal 
+   values.
+
+4. pyip.inputInt(min=0,max=99)
+
+5. The pattern (raw string) of which the output should match.
+
+6. RetryLimitException error occurs
+
+7. 'hello' will be the output
+
+
+Sandwich Maker
+
+import pyinputplus as p
+total_cost=0
+bread=p.inputMenu(["wheat","white","sourdough"])
+if bread=="wheat":
+    total_cost+=10
+elif bread=="white":
+    total_cost+=8
+elif bread=="sourdough":
+    total_cost+=15
+
+protein=p.inputMenu(["chicken","turkey","ham","tofu"])
+if protein=="chicken":
+    total_cost+=80
+elif protein=="turkey":
+    total_cost+=100
+elif protein=="ham":
+    total_cost+=110
+elif protein=="tofu":
+    total_cost+=90
+
+print("add cheese?")
+cheese_response=p.inputYesNo()
+if cheese_response=='yes':
+    cheese=p.inputMenu(["cheddar","Swiss","Mozzarella"])
+    if cheese.lower()=="cheddar":
+        total_cost+=30
+    elif cheese.lower()=="swiss":
+        total_cost+=50
+    elif cheese.lower()=="Mozzarella":
+        total_cost+=20
+
+print("add mayo?")
+mayo_response=p.inputYesNo()
+if mayo_response.lower()=="yes":
+    total_cost+=5
+
+print("add mustard?")
+mustard_response=p.inputYesNo()
+if mustard_response.lower()=="yes":
+    total_cost+=8
+
+print("add lettuce?")
+lettuce_response=p.inputYesNo()
+if lettuce_response.lower()=="yes":
+    total_cost+=10
+
+print("add tomato?")
+tomato_response=p.inputYesNo()
+if tomato_response.lower()=="yes":
+    total_cost+=5
+
+print(f"Total Cost of Sandwich is {total_cost}")
+
+
+Write Your Own Multiplication Quiz
+
+import time
+import random
+for i in range(10):
+    count=0
+    x=random.randint(0,9)
+    y=random.randint(0,9)
+    tempx=x
+    tempy=y
+    while True:
+        start=time.time()
+        print(f"{tempx} * {tempy} = ")
+        ans=int(input())
+        stop=time.time()
+        if stop-start>8:
+            print("incorrect!")
+            time.sleep(1)
+            break
+        if ans== x*y:
+            print("Correct!")
+            time.sleep(1)
+            break
+        else:
+            print("incorrect")
+            time.sleep(1)
+            count+=1
+        if count>2:
+            break

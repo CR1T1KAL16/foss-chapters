@@ -1,0 +1,89 @@
+CHAPTER 2
+
+Practice Questions
+
+1. 1 and 0. They're written as "True" and "False"
+
+2. and, or and not.
+
+3. AND truth table:
+
+	a     b     output
+	0     0       0
+	0     1       0
+	1     0       0
+	1     1       1
+
+   OR truth table:
+
+	a     b     output
+	0     0       0
+	0     1       1  
+	1     0       1
+	1     1       1
+
+   NOT truth table:
+
+	a   output
+	0     1
+	1     0
+
+4. False
+   False
+   True
+   False
+   False
+   True
+
+5. >, <, =, !=, <= and >=
+
+6. equal to operator is used to check if two values are the same and does not store any values or other data. 
+   Assignment operator is used to assign a particular value on the right to a variable on the left which is stored in the memory for later use.
+
+7. Condition is basically another term for the boolean values. A condition statement returns either True or False depending on the input. It is typically used in an If-Else statement.
+
+8. First block:
+	spam = 0
+	print("spam")
+   Second block:
+	if spam == 10:
+		print("eggs")
+	print("spam)
+   Third block:
+	if spam > 5:
+		print("bacon")
+	else:
+		print("ham")
+
+9. spam=int(input("enter value of spam: "))
+   if spam==1:
+	print("Hello")
+   elif spam==2:
+	print("Howdy")
+   else:
+	print("Greetings!")
+
+10. alt + F4
+
+11. break ends the loop, and no statement runs after the break statement.
+    continue skips the current value/input and moves on to the next traversing element. It does not end the loop but only skips the
+    specific elements.
+
+12. All of the given range are the same. The argument contains the start, end and step value, and the default values of start and step
+    value are 0 and 1 respectively. End value is a necessary value to input.
+
+13. Using for loop:
+	for i in range(1,11):
+		print(i)
+    Using while loop:
+	n=0
+	while n<11:
+		n=n+1
+		print(n)
+
+14. spam.bacon()
+
+		
+	
+    
+

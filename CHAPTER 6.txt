@@ -1,0 +1,114 @@
+CHAPTER 6
+
+1. It helps to add characters that aren't possible to input in a string.
+
+2. \n represents a new line. \t represents tab space.
+
+3. By putting another backslash before it so it acts as escape character and not the one needed for string
+
+4. It is because a double quote needs another double quote to end the string, likewise with single quotes. 
+
+5. Using triple quotes(''') in the beginning and end of the string.
+
+6. .e
+   .Hello
+   .Hello
+   .lo, world!
+
+7. .HELLO
+   .True
+   .hello
+
+8. ['Remember,', 'remember,', 'the', 'fifth', 'of', 'November.']
+
+9. using rjust(), ljust() and center()
+
+10. Using lstrip() to trim whitespace characters from beginning, rstrip() to trim from the end, and strip() to trim from both the sides.
+
+Table Printer
+
+def printTable(list):
+    colwidths=[]
+    for i in list:
+        max=0
+        for j in i:
+            if len(j)>max:
+                max=len(j)
+        colwidths.append(max)
+    for i in range(len(list[0])):
+        for j in range(len(list)):
+            x=list[j][i].rjust(colwidths[j])
+            print(x,end='  ')
+        print()
+
+Zombie Dice Bots
+
+class random:
+    def __init__(self, name):
+        self.name = name
+
+    def turn(self, gameState):
+        diceRollResults = zombiedice.roll() 
+        shotguns = 0
+        while diceRollResults is not None and random.randint(0,1)==0:
+            shotguns += diceRollResults['shotgun']
+    
+class two_brains:
+    def __init__(self, name):
+        self.name = name
+
+    def turn(self, gameState):
+        diceRollResults = zombiedice.roll()
+        brains = 0
+        while diceRollResults is not None:
+            brains += diceRollResults['brains']
+            if brains < 2:
+                diceRollResults = zombiedice.roll()
+            else:
+                break
+
+class two_shotguns:
+    def __init__(self, name):
+        self.name = name
+
+    def turn(self, gameState):
+        diceRollResults = zombiedice.roll()
+        shotguns = 0
+        while diceRollResults is not None:
+            shotguns += diceRollResults['shotgun']
+            if shotguns < 2:
+                diceRollResults = zombiedice.roll()
+            else:
+                break
+
+class four:
+    def __init__(self, name):
+        self.name = name
+
+    def turn(self, gameState):
+        diceRollResults = zombiedice.roll()
+        round=0
+        while diceRollResults is not None and round<4:
+            shotguns += diceRollResults['shotgun']
+            round+=1
+            if shotguns < 2:
+                diceRollResults = zombiedice.roll()
+            else:
+                break
+
+class more_shotguns:
+    def __init__(self, name):
+        self.name = name
+
+    def turn(self, gameState):
+        diceRollResults = zombiedice.roll()
+        brains = 0
+        shotguns = 0
+        while diceRollResults is not None:
+            brains += diceRollResults['brains']
+            shotguns += diceRollResults['shotgun']
+            if brains > shotguns:
+                diceRollResults = zombiedice.roll()
+            else:
+                break
+        

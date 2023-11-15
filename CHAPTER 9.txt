@@ -1,0 +1,101 @@
+CHAPTER 9
+
+1. Relative to the path of the current working directory.
+
+2. Starts with a backslash
+
+3. WindowsPath('C:/Users/Al')
+
+4. It will give an error as it is not mentioned "path" in the left directory.
+
+5. os.getcwd() returns the path of the current working directory.
+   os.chdir() changes the path of the current working directory to any specified path, unless
+   the path does not exist, which would give an error.
+
+6. . takes you all the way back to the starting of the directory path.
+   .. takes you to the parent folder of the current working directory.
+
+7. spam.txt is the base name, and the rest is the directory name.
+
+8. "r" : allows you to open a file and only allows you to read the file.
+   "w" : allows you to edit the contents of the file. overwrites the file contents if the file
+         already exists. 
+   "a" : allows you to edit the contents of the file. Appends information to the file if it 
+         already exists.
+
+9. If an existing file is opened using write mode, all the previous contents of the file will
+   be erased and replaced by the new contents.
+
+10. read() returns the whole content of the file in the form of a string. 
+    readlines() returns the contents of the file line by line. The lines are stored as a 
+    list.
+
+11. It resembles a dictionary. It has keys and values.
+
+
+Extending the Multi-Clipboard
+
+import sys, pyperclip
+
+# Save clipboard content
+if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
+    TEXT[sys.argv[2]] = pyperclip.paste()
+# Deletes a keyword from shelf
+elif len(sys.argv) == 3 and sys.argv[1].lower() == 'delete':
+     del TEXT[sys.argv[2]]
+# Deletes all the keywords
+elif len(sys.argv) == 2 and sys.argv[1].lower() == 'delete':
+    for i in TEXT.keys():
+        del TEXT[i]
+        
+elif len(sys.argv) == 2:
+     # List keywords and load content
+    if sys.argv[1].lower() == 'list':
+        pyperclip.copy(str(list(TEXT.keys())))
+    elif sys.argv[1] in TEXT:
+        pyperclip.copy(TEXT[sys.argv[1]])
+    
+TEXT.close()
+
+
+Mad Libs
+
+adjective=input("enter adjective: ")
+noun=input("enter noun: ")
+verb=input("enter verb: ")
+with open('madlibs.txt','r') as f:
+    contents = f.read()
+    contents_list=contents.split()
+    for i in contents_list:
+        if i.lower()=='adjective':
+            contents_list[contents_list.index(i)] = adjective
+        elif i.lower() == 'noun':
+            contents_list[contents_list.index(i)] = noun
+        elif i.lower() == 'verb':
+            contents_list[contents_list.index(i)] = verb
+
+    print(' '.join(contents_list))
+
+
+Regex Search
+
+import re
+from pathlib import Path
+folder_name=input("enter folder name: ")
+exp=input("enter an expression: ")
+p = Path('C:/Users/mukund/{folder_name}')
+files=list(p.glob('*.txt'))
+for i in files:
+    with open(i,'r') as f:
+        lines=f.readlines()
+        for j in lines:
+            regex=re.compile(r'{exp}')
+            mo=regex.search(j)
+            print(mo.group())
+
+
+
+
+
+
+ 
