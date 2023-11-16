@@ -38,6 +38,7 @@ Extending the Multi-Clipboard
 import sys, pyperclip
 
 # Save clipboard content
+TEXT=shelve.open('clipboard')
 if len(sys.argv) == 3 and sys.argv[1].lower() == 'save':
     TEXT[sys.argv[2]] = pyperclip.paste()
 # Deletes a keyword from shelf
@@ -73,7 +74,6 @@ with open('madlibs.txt','r') as f:
             contents_list[contents_list.index(i)] = noun
         elif i.lower() == 'verb':
             contents_list[contents_list.index(i)] = verb
-
     print(' '.join(contents_list))
 
 
@@ -91,7 +91,10 @@ for i in files:
         for j in lines:
             regex=re.compile(r'{exp}')
             mo=regex.search(j)
-            print(mo.group())
+            if mo:
+               print(mo.group())
+
+
 
 
 
